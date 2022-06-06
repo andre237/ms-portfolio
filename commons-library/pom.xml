@@ -15,6 +15,7 @@
     <module>kafka-utils</module>
     <module>collections-utils</module>
     <module>rest-utils</module>
+    <module>metrics-utils</module>
   </modules>
 
   <properties>

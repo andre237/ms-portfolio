@@ -26,6 +26,11 @@
       <artifactId>rest-utils</artifactId>
       <version>0.0.1</version>
     </dependency>
+    <dependency>
+      <groupId>com.andre.training</groupId>
+      <artifactId>metrics-utils</artifactId>
+      <version>0.0.1</version>
+    </dependency>
   </dependencies>
 
 </project>

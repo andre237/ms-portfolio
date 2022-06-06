@@ -2,7 +2,7 @@ spring:
   application:
     name: 'ms-users-entry'
   profiles:
-    include: 'kafka'
+    include: 'kafka,metrics'
 eureka:
   client:
     service-url:

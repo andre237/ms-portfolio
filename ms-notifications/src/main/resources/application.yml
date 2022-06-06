@@ -1,6 +1,8 @@
 spring:
   application:
     name: 'ms-notifications'
+  profiles:
+    include: 'metrics'
 eureka:
   client:
     service-url:
