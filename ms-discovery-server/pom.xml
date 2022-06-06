@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>ms-users-entry</artifactId>
+  <artifactId>ms-discovery-server</artifactId>
 
   <properties>
     <maven.compiler.source>16</maven.compiler.source>
@@ -18,15 +18,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.andre.training</groupId>
-      <artifactId>kafka-utils</artifactId>
-      <version>0.0.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>com.andre.training</groupId>
-      <artifactId>rest-utils</artifactId>
-      <version>0.0.1</version>
+      <groupId>org.springframework.cloud</groupId>
+      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
     </dependency>
   </dependencies>
 

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: 'ms-users-entry'
+  profiles:
+    include: 'kafka'
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    prefer-ip-address: true
+app:
+  user:
+    submit:
+      topic: 'USER_ENTRY_JSON_V1'

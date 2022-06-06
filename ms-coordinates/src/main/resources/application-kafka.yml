@@ -1,0 +1,11 @@
+kafka:
+  broker:
+    bootstrap-servers: localhost:9092
+    client-id: ms-coordinates
+  producer:
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: com.andre.training.kafka.serialization.CustomKafkaJsonSerializer
+  consumer:
+    auto-offset-reset: latest
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: com.andre.training.kafka.serialization.CustomKafkaJsonDeserializer
