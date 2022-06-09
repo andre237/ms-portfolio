@@ -21,11 +21,6 @@
       <groupId>org.springframework.cloud</groupId>
       <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
     </dependency>
-    <dependency>
-      <groupId>com.andre.training</groupId>
-      <artifactId>metrics-utils</artifactId>
-      <version>0.0.1</version>
-    </dependency>
   </dependencies>
 
 </project>

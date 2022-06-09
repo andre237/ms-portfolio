@@ -1,15 +1,7 @@
 spring:
+  config:
+    import: 'configserver:http://localhost:8888'
   application:
     name: 'ms-users-entry'
   profiles:
-    include: 'kafka,metrics'
-eureka:
-  client:
-    service-url:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
-  instance:
-    prefer-ip-address: true
-app:
-  user:
-    submit:
-      topic: 'USER_ENTRY_JSON_V1'
+    active: 'default,eureka-client,metrics,kafka'
