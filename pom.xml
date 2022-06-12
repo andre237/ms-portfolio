@@ -22,6 +22,8 @@
     <module>commons-library</module>
     <module>ms-discovery-server</module>
     <module>ms-config-server</module>
+    <module>ms-orders</module>
+    <module>ms-delivery</module>
   </modules>
 
   <properties>
