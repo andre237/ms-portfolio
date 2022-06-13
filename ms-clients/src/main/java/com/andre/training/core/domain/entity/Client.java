@@ -12,6 +12,20 @@ public class Client {
     private LocalDateTime birthDate;
     private Address address;
 
+    public Client() { }
+
+    public Client(String fullName, Email email, LocalDateTime birthDate) {
+        this.fullName = fullName;
+        this.email = email;
+        this.birthDate = birthDate;
+    }
+
+    public Client(String fullName, String email, LocalDateTime birthDate) {
+        this.fullName = fullName;
+        this.email = new Email(email);
+        this.birthDate = birthDate;
+    }
+
     public void setEmail(String email) {
         this.email = new Email(email);
     }
