@@ -2,23 +2,22 @@ package com.andre.training.infra.events;
 
 import com.andre.training.core.domain.shared.Event;
 import com.andre.training.core.domain.shared.EventHandler;
-import org.springframework.context.event.EventListener;
+import com.andre.training.core.domain.shared.EventPublisher;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class CentralEventHub {
+public class SpringApplicationEventHub implements EventPublisher {
 
     private final List<EventHandler<?>> registeredHandlers;
 
-    public CentralEventHub(List<EventHandler<?>> registeredHandlers) {
+    public SpringApplicationEventHub(List<EventHandler<?>> registeredHandlers) {
         this.registeredHandlers = registeredHandlers;
     }
 
-    @EventListener
-    public void handleEvent(Event event) {
+    @Override
+    public void publish(Event event) {
         registeredHandlers.forEach(eventHandler -> eventHandler.handle(event));
     }
-
 }

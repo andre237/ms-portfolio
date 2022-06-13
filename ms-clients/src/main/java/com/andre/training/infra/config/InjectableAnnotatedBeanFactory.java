@@ -18,7 +18,7 @@ public class InjectableAnnotatedBeanFactory implements BeanFactoryPostProcessor 
 
     public InjectableAnnotatedBeanFactory() {
         this.cpScanner = new ClassPathScanningCandidateComponentProvider(false);
-        cpScanner.addIncludeFilter(new AnnotationTypeFilter(Injectable.class));;
+        cpScanner.addIncludeFilter(new AnnotationTypeFilter(Injectable.class));
     }
 
     @Override
