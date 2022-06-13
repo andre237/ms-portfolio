@@ -9,14 +9,14 @@ import lombok.EqualsAndHashCode;
 import java.time.LocalDateTime;
 
 @Data @EqualsAndHashCode(callSuper = false)
-public class FirstLoginRequest extends RequestMapper<FirstClientLoginUseCase.ClientInput> {
+public class FirstLoginRequest extends RequestMapper<FirstClientLoginUseCase.ClientIO> {
 
     private String fullName;
     private String email;
     private String birthDate;
 
     @Override
-    public FirstClientLoginUseCase.ClientInput map() {
-        return new FirstClientLoginUseCase.ClientInput(fullName, email, LocalDateTime.parse(birthDate));
+    public FirstClientLoginUseCase.ClientIO map() {
+        return new FirstClientLoginUseCase.ClientIO(fullName, email, LocalDateTime.parse(birthDate));
     }
 }

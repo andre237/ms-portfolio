@@ -3,12 +3,14 @@ package com.andre.training.core.application;
 import com.andre.training.core.domain.entity.Client;
 import com.andre.training.core.domain.ports.ClientRepository;
 import com.andre.training.core.shared.UseCase;
+import com.andre.training.infra.stereotype.UseCaseComponent;
 
 import java.time.LocalDateTime;
 
 import static com.andre.training.core.application.FirstClientLoginUseCase.*;
 
-public class FirstClientLoginUseCase extends UseCase<ClientInput, ClientOutput> {
+@UseCaseComponent
+public class FirstClientLoginUseCase extends UseCase<ClientIO, ClientIO> {
 
     private final ClientRepository clientRepository;
 
@@ -17,13 +19,13 @@ public class FirstClientLoginUseCase extends UseCase<ClientInput, ClientOutput> 
     }
 
     @Override
-    public ClientOutput execute(ClientInput input) {
-        Client client = input.convertToClient();
-        clientRepository.save(client);
-        return null;
+    public ClientIO execute(ClientIO input) {
+        Client savedClient = clientRepository.save(input.convertToClient());
+        return ClientIO.convertClientToOutput(savedClient);
     }
 
-    public record ClientInput(String fullName, String email, LocalDateTime birthDate) implements UseCase.Input {
+    public record ClientIO(String fullName, String email, LocalDateTime birthDate) implements UseCase.Input, UseCase.Output {
+
         Client convertToClient() {
             var domainClient = new Client();
             domainClient.setFullName(fullName);
@@ -31,8 +33,10 @@ public class FirstClientLoginUseCase extends UseCase<ClientInput, ClientOutput> 
             domainClient.setBirthDate(birthDate);
             return domainClient;
         }
+
+        static ClientIO convertClientToOutput(Client client) {
+            return new ClientIO(client.getFullName(), client.getEmail().getAddress(), client.getBirthDate());
+        }
+
     }
-
-    public record ClientOutput() implements UseCase.Output {}
-
 }
