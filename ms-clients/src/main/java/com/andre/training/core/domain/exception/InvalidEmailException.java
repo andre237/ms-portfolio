@@ -1,6 +1,6 @@
 package com.andre.training.core.domain.exception;
 
-import com.andre.training.core.shared.BusinessException;
+import com.andre.training.core.domain.shared.BusinessException;
 import lombok.Getter;
 
 @Getter

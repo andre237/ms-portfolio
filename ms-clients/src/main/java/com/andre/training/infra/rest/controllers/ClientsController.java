@@ -1,6 +1,6 @@
 package com.andre.training.infra.rest.controllers;
 
-import com.andre.training.core.application.FirstClientLoginUseCase;
+import com.andre.training.core.application.usecases.FirstClientLoginUseCase;
 import com.andre.training.gateway.AbstractRestController;
 import com.andre.training.gateway.response.RestResult;
 import com.andre.training.infra.rest.presenters.FirstLoginRequest;

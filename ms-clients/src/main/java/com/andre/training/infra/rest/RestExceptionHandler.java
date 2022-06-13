@@ -1,6 +1,6 @@
 package com.andre.training.infra.rest;
 
-import com.andre.training.core.shared.BusinessException;
+import com.andre.training.core.domain.shared.BusinessException;
 import com.andre.training.gateway.response.RestResult;
 
 import lombok.extern.slf4j.Slf4j;

@@ -1,4 +1,4 @@
-package com.andre.training.core.shared;
+package com.andre.training.core.application;
 
 public abstract class UseCase<I extends UseCase.Input, O extends UseCase.Output> {
 

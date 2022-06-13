@@ -1,6 +1,6 @@
 package com.andre.training.infra.rest.presenters;
 
-import com.andre.training.core.application.FirstClientLoginUseCase;
+import com.andre.training.core.application.usecases.FirstClientLoginUseCase;
 import com.andre.training.gateway.request.RequestMapper;
 
 import lombok.Data;

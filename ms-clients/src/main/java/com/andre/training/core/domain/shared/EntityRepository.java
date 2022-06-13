@@ -1,4 +1,4 @@
-package com.andre.training.core.shared;
+package com.andre.training.core.domain.shared;
 
 import java.util.Set;
 
