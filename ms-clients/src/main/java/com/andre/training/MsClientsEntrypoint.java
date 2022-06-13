@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MsUsersEntrypoint {
+public class MsClientsEntrypoint {
 
     public static void main(String[] args) {
-        SpringApplication.run(MsUsersEntrypoint.class, args);
+        SpringApplication.run(MsClientsEntrypoint.class, args);
     }
 
 }

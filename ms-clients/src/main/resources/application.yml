@@ -2,6 +2,6 @@ spring:
   config:
     import: 'configserver:http://localhost:8888'
   application:
-    name: 'ms-users-entry'
+    name: 'ms-clients'
   profiles:
     active: 'default,eureka-client,metrics,kafka'

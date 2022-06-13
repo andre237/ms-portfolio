@@ -10,9 +10,14 @@ public class RestResult<T> implements Serializable {
 
     private Date timestamp;
     private T data;
+    private String error;
+
+    public RestResult() {
+        this.timestamp = new Date();
+    }
 
     public RestResult(T data) {
-        this.timestamp = new Date();
+        this();
         this.data = data;
     }
 
