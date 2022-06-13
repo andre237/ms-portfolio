@@ -5,6 +5,7 @@ import com.andre.training.core.domain.entity.Email;
 import com.andre.training.core.domain.ports.ClientRepository;
 import com.andre.training.infra.data.entities.ClientEntityDocument;
 import com.andre.training.infra.data.repositories.mongo.ClientMongoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.Set;
@@ -12,7 +13,12 @@ import java.util.Set;
 @Repository
 public class ClientRepositoryImpl implements ClientRepository {
 
-    private ClientMongoRepository mongoRepository;
+    private final ClientMongoRepository mongoRepository;
+
+    @Autowired
+    public ClientRepositoryImpl(ClientMongoRepository mongoRepository) {
+        this.mongoRepository = mongoRepository;
+    }
 
     @Override
     public Client save(Client entity) {

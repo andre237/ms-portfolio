@@ -16,7 +16,7 @@
   <packaging>pom</packaging>
   <version>0.0.1</version>
   <modules>
-    <module>ms-users-entry</module>
+    <module>ms-clients</module>
     <module>ms-notifications</module>
     <module>ms-coordinates</module>
     <module>commons-library</module>

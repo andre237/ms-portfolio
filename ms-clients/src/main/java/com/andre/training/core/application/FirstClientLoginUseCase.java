@@ -25,9 +25,12 @@ public class FirstClientLoginUseCase extends UseCase<ClientInput, ClientOutput> 
 
     public record ClientInput(String fullName, String email, LocalDateTime birthDate) implements UseCase.Input {
         Client convertToClient() {
-            return null;
+            var domainClient = new Client();
+            domainClient.setFullName(fullName);
+            domainClient.setEmail(email);
+            domainClient.setBirthDate(birthDate);
+            return domainClient;
         }
-
     }
 
     public record ClientOutput() implements UseCase.Output {}
