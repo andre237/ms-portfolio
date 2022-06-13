@@ -5,13 +5,13 @@ import com.andre.training.core.domain.events.ClientRegisteredEvent;
 import com.andre.training.core.domain.shared.EventPublisher;
 import com.andre.training.core.domain.entity.Client;
 import com.andre.training.core.domain.ports.ClientRepository;
-import com.andre.training.infra.stereotype.UseCaseComponent;
+import com.andre.training.core.domain.stereotype.Injectable;
 
 import java.time.LocalDateTime;
 
 import static com.andre.training.core.application.usecases.FirstClientLoginUseCase.*;
 
-@UseCaseComponent
+@Injectable
 public class FirstClientLoginUseCase extends UseCase<ClientIO, ClientIO> {
 
     private final EventPublisher eventPublisher;
