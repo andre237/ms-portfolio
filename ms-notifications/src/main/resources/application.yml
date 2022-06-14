@@ -4,4 +4,4 @@ spring:
   application:
     name: 'ms-notifications'
   profiles:
-    active: 'default,eureka-client,metrics'
+    active: 'default,eureka-client,metrics,kafka'
