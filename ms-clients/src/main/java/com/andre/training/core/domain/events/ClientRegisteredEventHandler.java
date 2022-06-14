@@ -1,7 +1,5 @@
 package com.andre.training.core.domain.events;
 
-import com.andre.training.core.domain.shared.Event;
-import com.andre.training.core.domain.shared.EventHandler;
 import com.andre.training.core.domain.stereotype.Injectable;
 import lombok.extern.slf4j.Slf4j;
 

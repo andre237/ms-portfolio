@@ -1,8 +1,8 @@
 package com.andre.training.infra.events;
 
-import com.andre.training.core.domain.shared.Event;
-import com.andre.training.core.domain.shared.EventHandler;
-import com.andre.training.core.domain.shared.EventPublisher;
+import com.andre.training.core.domain.events.Event;
+import com.andre.training.core.domain.events.EventHandler;
+import com.andre.training.core.domain.events.EventPublisher;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
