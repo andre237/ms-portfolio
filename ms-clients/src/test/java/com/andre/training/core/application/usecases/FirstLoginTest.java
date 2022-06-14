@@ -1,8 +1,8 @@
 package com.andre.training.core.application.usecases;
 
 import com.andre.training.core.domain.entity.Client;
+import com.andre.training.core.domain.events.EventPublisher;
 import com.andre.training.core.domain.ports.ClientRepository;
-import com.andre.training.core.domain.shared.EventPublisher;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -34,8 +34,8 @@ public class FirstLoginTest {
     public void shouldSaveAndPublishEventOnExecution() {
         useCase.execute(this.mockIOData());
 
-        verify(eventPublisher, timeout(1)).publish(any());
-        verify(clientRepository, timeout(1)).save(any());
+        verify(eventPublisher, times(1)).publish(any());
+        verify(clientRepository, times(1)).save(any());
     }
 
     private Client mockDomainData() {

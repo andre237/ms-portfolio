@@ -2,8 +2,8 @@ package com.andre.training.core.application.usecases;
 
 import com.andre.training.core.application.UseCase;
 import com.andre.training.core.domain.events.ClientRegisteredEvent;
-import com.andre.training.core.domain.shared.EventPublisher;
 import com.andre.training.core.domain.entity.Client;
+import com.andre.training.core.domain.events.EventPublisher;
 import com.andre.training.core.domain.ports.ClientRepository;
 import com.andre.training.core.domain.stereotype.Injectable;
 

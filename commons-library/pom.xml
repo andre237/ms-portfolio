@@ -12,9 +12,10 @@
   <artifactId>commons-library</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>kafka-utils</module>
+    <module>messaging-utils</module>
     <module>collections-utils</module>
     <module>rest-utils</module>
+    <module>arch-utils</module>
   </modules>
 
   <properties>
