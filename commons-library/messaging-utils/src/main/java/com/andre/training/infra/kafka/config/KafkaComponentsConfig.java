@@ -1,6 +1,5 @@
-package com.andre.training.kafka.config;
+package com.andre.training.infra.kafka.config;
 
-import com.andre.training.schema.BaseSchema;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.admin.AdminClientConfig;
@@ -10,7 +9,6 @@ import org.apache.kafka.common.config.SaslConfigs;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
@@ -68,7 +66,7 @@ public class KafkaComponentsConfig {
     }
 
     @Bean
-    public KafkaTemplate<String, BaseSchema> kafkaTemplate() {
+    public KafkaTemplate<String, Object> kafkaTemplate() {
         return new KafkaTemplate<>(new DefaultKafkaProducerFactory<>(kafkaProducerProps()));
     }
 

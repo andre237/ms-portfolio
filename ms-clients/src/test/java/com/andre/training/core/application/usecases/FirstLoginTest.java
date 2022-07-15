@@ -39,10 +39,10 @@ public class FirstLoginTest {
     }
 
     private Client mockDomainData() {
-        return new Client("test name", "test@email.com", LocalDateTime.MAX);
+        return new Client("test cpf", "test name", "test@email.com", LocalDateTime.MAX);
     }
 
     private FirstClientLoginUseCase.ClientIO mockIOData() {
-        return new FirstClientLoginUseCase.ClientIO("test name", "test@email.com", LocalDateTime.now());
+        return new FirstClientLoginUseCase.ClientIO("test cpf", "test name", "test@email.com", LocalDateTime.now());
     }
 }

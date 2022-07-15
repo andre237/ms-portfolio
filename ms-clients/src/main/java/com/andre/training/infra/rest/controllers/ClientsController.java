@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("client")
 public class ClientsController extends AbstractRestController {
@@ -22,7 +24,7 @@ public class ClientsController extends AbstractRestController {
     }
 
     @PostMapping("sign-up")
-    public RestResult<Object> createFirstLogin(@RequestBody FirstLoginRequest firstLoginRequest) {
+    public RestResult<Object> createFirstLogin(@Valid @RequestBody FirstLoginRequest firstLoginRequest) {
         var output = firstClientLoginUseCase.execute(firstLoginRequest.map());
         return getRestResult(output);
     }

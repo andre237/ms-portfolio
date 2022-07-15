@@ -13,7 +13,6 @@
   <packaging>pom</packaging>
   <modules>
     <module>messaging-utils</module>
-    <module>collections-utils</module>
     <module>rest-utils</module>
     <module>arch-utils</module>
   </modules>
@@ -32,6 +31,12 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>31.1-jre</version>
     </dependency>
   </dependencies>
 

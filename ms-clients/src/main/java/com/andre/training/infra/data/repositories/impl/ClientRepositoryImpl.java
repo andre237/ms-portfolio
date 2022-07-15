@@ -6,6 +6,9 @@ import com.andre.training.core.domain.ports.ClientRepository;
 import com.andre.training.infra.data.entities.ClientEntityDocument;
 import com.andre.training.infra.data.repositories.mongo.ClientMongoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Set;
@@ -27,7 +30,7 @@ public class ClientRepositoryImpl implements ClientRepository {
     }
 
     @Override
-    public Client findById(Email id) {
+    public Client findById(String id) {
         return null;
     }
 

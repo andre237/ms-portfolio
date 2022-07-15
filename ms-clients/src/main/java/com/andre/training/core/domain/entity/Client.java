@@ -3,10 +3,12 @@ package com.andre.training.core.domain.entity;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Data
 public class Client {
 
+    private String cpf;
     private String fullName;
     private Email email;
     private LocalDateTime birthDate;
@@ -14,13 +16,8 @@ public class Client {
 
     public Client() { }
 
-    public Client(String fullName, Email email, LocalDateTime birthDate) {
-        this.fullName = fullName;
-        this.email = email;
-        this.birthDate = birthDate;
-    }
-
-    public Client(String fullName, String email, LocalDateTime birthDate) {
+    public Client(String cpf, String fullName, String email, LocalDateTime birthDate) {
+        this.cpf = cpf;
         this.fullName = fullName;
         this.email = new Email(email);
         this.birthDate = birthDate;
@@ -29,4 +26,9 @@ public class Client {
     public void setEmail(String email) {
         this.email = new Email(email);
     }
+
+    public String getEmailAddress() {
+        return Optional.ofNullable(this.email).map(Email::getAddress).orElse(null);
+    }
+
 }

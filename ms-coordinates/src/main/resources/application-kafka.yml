@@ -4,8 +4,8 @@ kafka:
     client-id: ms-coordinates
   producer:
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
-    value-serializer: com.andre.training.kafka.serialization.CustomKafkaJsonSerializer
+    value-serializer: com.andre.training.infra.kafka.serialization.CustomKafkaJsonSerializer
   consumer:
     auto-offset-reset: latest
     key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-    value-deserializer: com.andre.training.kafka.serialization.CustomKafkaJsonDeserializer
+    value-deserializer: com.andre.training.infra.kafka.serialization.CustomKafkaJsonDeserializer

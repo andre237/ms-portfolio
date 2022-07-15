@@ -1,7 +1,7 @@
-package com.andre.training.kafka.serde;
+package com.andre.training.infra.kafka.serde;
 
-import com.andre.training.schema.BaseSchema;
-import com.andre.training.schema.MessagingPayload;
+import com.andre.training.core.domain.BaseEventSchema;
+import com.andre.training.core.domain.MessagingPayload;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.SneakyThrows;
@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j @Component
-public class CustomKafkaJsonDeserializer implements Deserializer<BaseSchema> {
+public class CustomKafkaJsonDeserializer implements Deserializer<BaseEventSchema> {
 
     private final ObjectMapper jsonParser = new ObjectMapper();
     private final HashMap<String, Class<?>> mappedSchemas = new HashMap<>();
@@ -27,19 +27,19 @@ public class CustomKafkaJsonDeserializer implements Deserializer<BaseSchema> {
         scanner.addIncludeFilter(new AnnotationTypeFilter(MessagingPayload.class));
         scanner.findCandidateComponents("com.andre.training").stream()
                 .map(this::buildBeanClassFromDefinition)
-                .filter(BaseSchema.class::isAssignableFrom)
+                .filter(BaseEventSchema.class::isAssignableFrom)
                 .forEach(type -> mappedSchemas.put(type.getAnnotation(MessagingPayload.class).identifier(), type));
     }
 
     @Override
-    public BaseSchema deserialize(String topic, byte[] payload) {
+    public BaseEventSchema deserialize(String topic, byte[] payload) {
         try {
             JsonNode rootNode = jsonParser.readTree(payload);
             JsonNode payloadNode = rootNode.get("data");
 
             Class<?> identifier = mappedSchemas.get(rootNode.get("identifier").asText());
             if (identifier != null && payloadNode != null) {
-                return (BaseSchema) jsonParser.treeToValue(payloadNode, identifier);
+                return (BaseEventSchema) jsonParser.treeToValue(payloadNode, identifier);
             }
 
             log.error("Could not find candidate schema to deserialization. Payload = {}", rootNode);

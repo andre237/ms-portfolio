@@ -9,8 +9,9 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider;
 import org.springframework.core.type.filter.AnnotationTypeFilter;
+import org.springframework.stereotype.Component;
 
-@Slf4j
+@Slf4j @Component
 public class InjectableAnnotatedBeanFactory implements BeanFactoryPostProcessor {
 
     private final ClassPathScanningCandidateComponentProvider cpScanner;

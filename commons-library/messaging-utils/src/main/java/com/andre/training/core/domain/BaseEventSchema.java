@@ -1,4 +1,4 @@
-package com.andre.training.schema;
+package com.andre.training.core.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BaseSchema implements Serializable {
+public class BaseEventSchema implements Serializable {
 
     private String identifier;
 

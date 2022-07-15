@@ -30,18 +30,14 @@ public class FirstClientLoginUseCase extends UseCase<ClientIO, ClientIO> {
         return ClientIO.convertClientToOutput(savedClient);
     }
 
-    public record ClientIO(String fullName, String email, LocalDateTime birthDate) implements UseCase.Input, UseCase.Output {
+    public record ClientIO(String cpf, String fullName, String email, LocalDateTime birthDate) implements UseCase.Input, UseCase.Output {
 
         Client convertToClient() {
-            var domainClient = new Client();
-            domainClient.setFullName(fullName);
-            domainClient.setEmail(email);
-            domainClient.setBirthDate(birthDate);
-            return domainClient;
+            return new Client(cpf, fullName, email, birthDate);
         }
 
         static ClientIO convertClientToOutput(Client client) {
-            return new ClientIO(client.getFullName(), client.getEmail().getAddress(), client.getBirthDate());
+            return new ClientIO(client.getCpf(), client.getFullName(), client.getEmailAddress(), client.getBirthDate());
         }
 
     }

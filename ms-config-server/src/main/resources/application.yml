@@ -6,3 +6,5 @@ spring:
           uri: 'file://${user.home}/Documents/Lessons/Portfolio/config-repo'
           searchPaths: '{application}'
           clone-on-start: true
+server:
+  port: 8888

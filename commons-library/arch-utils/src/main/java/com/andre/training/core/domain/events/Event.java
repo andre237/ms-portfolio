@@ -9,4 +9,8 @@ public interface Event extends Serializable {
         return LocalDateTime.now();
     }
 
+    default boolean shouldPublishToExternal() {
+        return false;
+    }
+
 }

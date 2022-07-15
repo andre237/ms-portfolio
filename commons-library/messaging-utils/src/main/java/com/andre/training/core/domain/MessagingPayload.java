@@ -1,4 +1,4 @@
-package com.andre.training.schema;
+package com.andre.training.core.domain;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

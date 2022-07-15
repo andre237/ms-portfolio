@@ -1,11 +1,10 @@
-package com.andre.training.rabbit.config;
+package com.andre.training.infra.rabbit.config;
 
 //import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
 //import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
 //import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 //import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 //import org.springframework.amqp.support.converter.MessageConverter;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
